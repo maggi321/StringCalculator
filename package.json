@@ -1,10 +1,9 @@
 {
   "name": "calculator",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,5 +17,9 @@
   "homepage": "https://github.com/maggi321/StringCalculator#readme",
   "devDependencies": {
     "jest": "^23.6.0"
-  }
+  },
+  "dependencies": {
+    "jest": "^23.6.0"
+  },
+  "description": ""
 }
