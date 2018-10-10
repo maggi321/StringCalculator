@@ -3,7 +3,7 @@ function add (number){
         return 0;
     }
     if(number.includes(",")) {
-        var numberArray = number.split(",");
+        var numberArray = number.split(/[\n | ,]/);
         return sum(numberArray);
     }
     else {
