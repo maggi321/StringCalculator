@@ -14,7 +14,12 @@ function add (number){
 function sum(numberArray) {
     var sum = 0;
     for(var i = 0; i < numberArray.length; i++) {
-        sum += parseInt(numberArray[i]);
+        if(numberArray[i] < 0) {
+            throw new Error("Negatives not allowed: " + numberArray[i]);
+        }
+        else {
+            sum += parseInt(numberArray[i]);
+        }
     }
     return sum;
 }

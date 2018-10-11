@@ -19,3 +19,10 @@ it("should sumerize multiple numbers", () =>  {
 it("should sumerize multiple numbers with a new line in string", () =>  {
     expect(add("1\n2,3")).toBe(6);
 });
+
+it("negative number not allowed", () => {
+    function trysum(){
+        add("-1, 2");
+    }
+    expect(trysum).toThrowError("Negatives not allowed: -1");
+});
