@@ -13,15 +13,21 @@ function add (number){
 
 function sum(numberArray) {
     var sum = 0;
+    var negatives = [];
     for(var i = 0; i < numberArray.length; i++) {
         if(numberArray[i] < 0) {
-            throw new Error("Negatives not allowed: " + numberArray[i]);
+            negatives.push(numberArray[i]);
         }
         else {
             sum += parseInt(numberArray[i]);
         }
     }
-    return sum;
+    if(negatives.length != 0) {
+        throw new Error("Negatives not allowed: " + negatives);
+    }
+    else {
+        return sum;
+    }
 }
 
 module.exports = add;

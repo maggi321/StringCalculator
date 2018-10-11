@@ -22,7 +22,14 @@ it("should sumerize multiple numbers with a new line in string", () =>  {
 
 it("negative number not allowed", () => {
     function trysum(){
-        add("-1, 2");
+        add("-1,2");
     }
     expect(trysum).toThrowError("Negatives not allowed: -1");
+});
+
+it("negative number not allowed", () => {
+    function trysum(){
+        add("2,-4,3,-5");
+    }
+    expect(trysum).toThrowError("Negatives not allowed: -4,-5");
 });
