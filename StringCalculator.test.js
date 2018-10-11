@@ -33,3 +33,11 @@ it("negative number not allowed", () => {
     }
     expect(trysum).toThrowError("Negatives not allowed: -4,-5");
 });
+
+it("should ignore numbers bigger then 1000", () =>  {
+    expect(add("1001,2")).toBe(2);
+});
+
+it("should sumerize numbers with other delimiter", () =>  {
+    expect(add("//;\n1;2")).toBe(3);
+});

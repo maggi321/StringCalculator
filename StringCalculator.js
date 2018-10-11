@@ -1,9 +1,14 @@
 function add (number){
+    var delimiter = [",","\\n"]
     if(number == "") {
         return 0;
     }
-    if(number.includes(",")) {
-        var numberArray = number.split(/[\n | ,]/);
+    if(number != "") {
+        if(number.indexOf("//") === 0) {
+            delimiter.push(number.substring(2,number.indexOf("\n")));
+            number = number.substring(number.indexOf("\n") + 1);
+        }
+        var numberArray = number.split(new RegExp (delimiter.join("|"), "g"));
         return sum(numberArray);
     }
     else {
@@ -18,7 +23,7 @@ function sum(numberArray) {
         if(numberArray[i] < 0) {
             negatives.push(numberArray[i]);
         }
-        else {
+        if(numberArray[i] < 1001) {
             sum += parseInt(numberArray[i]);
         }
     }
